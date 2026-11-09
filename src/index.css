@@ -1,0 +1,1279 @@
+:root {
+  --bg-dark: #09090b;
+  --panel-bg: #121215;
+  --card-bg: #18181d;
+  --border-color: #26262e;
+  --text-main: #f4f4f5;
+  --text-muted: #8e8e93;
+  --accent-purple: #a99af5;
+  --neon-cyan: #00f0ff;
+  --neon-purple: #b026ff;
+  --neon-pink: #ff007f;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: inherit;
+}
+
+body {
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+  overflow-x: hidden;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* ========================================================
+   ATMÓSFERAS Y ESTILOS ÚNICOS POR CADA DISEÑO/MODO
+   ======================================================== */
+
+/* 1. MODO MATRIX */
+.app-shell.theme-matrix {
+  font-family: 'Courier New', Courier, monospace;
+}
+.app-shell.theme-matrix h1, 
+.app-shell.theme-matrix h2, 
+.app-shell.theme-matrix h3,
+.app-shell.theme-matrix span,
+.app-shell.theme-matrix p {
+  color: #00ff41 !important;
+  text-shadow: 0 0 8px rgba(0, 255, 65, 0.5);
+}
+.app-shell.theme-matrix .brand-mark {
+  background: #00ff41 !important;
+  color: #000 !important;
+  box-shadow: 0 0 12px rgba(0, 255, 65, 0.6);
+}
+.app-shell.theme-matrix .search-wrap {
+  border-color: rgba(0, 255, 65, 0.5) !important;
+  background: rgba(0, 15, 3, 0.9) !important;
+  box-shadow: 0 0 12px rgba(0, 255, 65, 0.2);
+}
+.app-shell.theme-matrix .search-wrap input {
+  color: #00ff41 !important;
+}
+.app-shell.theme-matrix .tool-card {
+  border: 1px solid #00ff41 !important;
+  background: rgba(0, 15, 3, 0.92) !important;
+  box-shadow: 0 0 15px rgba(0, 255, 65, 0.2);
+}
+.app-shell.theme-matrix .start-button {
+  background: #00ff41 !important;
+  color: #000 !important;
+  box-shadow: 0 0 15px rgba(0, 255, 65, 0.4);
+}
+
+/* 2. MODO ÁMBAR PIP-BOY */
+.app-shell.theme-amber {
+  font-family: 'Courier New', Courier, monospace;
+}
+.app-shell.theme-amber h1, 
+.app-shell.theme-amber h2, 
+.app-shell.theme-amber h3,
+.app-shell.theme-amber span,
+.app-shell.theme-amber p {
+  color: #ffb000 !important;
+  text-shadow: 0 0 10px rgba(255, 176, 0, 0.6);
+  letter-spacing: 0.5px;
+}
+.app-shell.theme-amber .brand-mark {
+  background: #ffb000 !important;
+  color: #000 !important;
+  box-shadow: 0 0 12px rgba(255, 176, 0, 0.6);
+}
+.app-shell.theme-amber .search-wrap {
+  border-color: rgba(255, 176, 0, 0.5) !important;
+  background: rgba(20, 12, 0, 0.9) !important;
+  box-shadow: 0 0 12px rgba(255, 176, 0, 0.2);
+}
+.app-shell.theme-amber .search-wrap input {
+  color: #ffb000 !important;
+}
+.app-shell.theme-amber .tool-card {
+  border: 1px solid #ffb000 !important;
+  background: rgba(20, 12, 0, 0.95) !important;
+  box-shadow: 0 0 20px rgba(255, 176, 0, 0.25);
+}
+.app-shell.theme-amber .start-button {
+  background: #ffb000 !important;
+  color: #000 !important;
+  box-shadow: 0 0 15px rgba(255, 176, 0, 0.4);
+}
+
+/* 3. MODO SYNTHWAVE 80S */
+.app-shell.theme-synthwave {
+  font-family: 'Georgia', serif;
+}
+.app-shell.theme-synthwave h1 {
+  color: #ff007f !important;
+  text-shadow: 0 0 20px rgba(255, 0, 127, 0.7);
+}
+.app-shell.theme-synthwave h2,
+.app-shell.theme-synthwave h3 {
+  color: #ff7b00 !important;
+}
+.app-shell.theme-synthwave .brand-mark {
+  background: linear-gradient(135deg, #ff007f, #ff7b00) !important;
+  color: #ffffff !important;
+  box-shadow: 0 0 15px rgba(255, 0, 127, 0.6);
+}
+.app-shell.theme-synthwave .search-wrap {
+  border-color: rgba(255, 0, 127, 0.5) !important;
+  background: rgba(22, 8, 36, 0.9) !important;
+  box-shadow: 0 0 15px rgba(255, 0, 127, 0.2);
+}
+.app-shell.theme-synthwave .search-wrap input {
+  color: #fff !important;
+}
+.app-shell.theme-synthwave .tool-card {
+  border: 1px solid rgba(255, 0, 127, 0.5) !important;
+  background: rgba(22, 8, 36, 0.9) !important;
+  box-shadow: 0 0 25px rgba(255, 0, 127, 0.25);
+}
+.app-shell.theme-synthwave .start-button {
+  background: linear-gradient(90deg, #ff007f, #ff7b00) !important;
+  color: #fff !important;
+  box-shadow: 0 0 20px rgba(255, 0, 127, 0.5);
+}
+
+/* 4. MODO NEÓN CYBERPUNK */
+.app-shell.theme-neon {
+  font-family: system-ui, -apple-system, sans-serif;
+}
+.app-shell.theme-neon h1 {
+  color: #00f0ff !important;
+  text-shadow: 0 0 15px rgba(0, 240, 255, 0.6);
+}
+.app-shell.theme-neon .brand-mark {
+  background: #00f0ff !important;
+  color: #000 !important;
+  box-shadow: 0 0 15px rgba(0, 240, 255, 0.6);
+}
+.app-shell.theme-neon .search-wrap {
+  border-color: rgba(0, 240, 255, 0.5) !important;
+  background: rgba(16, 20, 28, 0.9) !important;
+  box-shadow: 0 0 15px rgba(0, 240, 255, 0.2);
+}
+.app-shell.theme-neon .search-wrap input {
+  color: #fff !important;
+}
+.app-shell.theme-neon .tool-card {
+  border: 1px solid rgba(0, 240, 255, 0.4) !important;
+  background: rgba(16, 20, 28, 0.85) !important;
+  box-shadow: 0 0 20px rgba(0, 240, 255, 0.15);
+}
+.app-shell.theme-neon .start-button {
+  background: #00f0ff !important;
+  color: #000 !important;
+  box-shadow: 0 0 15px rgba(0, 240, 255, 0.4);
+}
+
+/* 5. MODO ÁCIDO UNDERGROUND */
+.app-shell.theme-acid {
+  font-family: system-ui, -apple-system, sans-serif;
+}
+.app-shell.theme-acid h1 {
+  color: #ccff00 !important;
+  text-shadow: 0 0 15px rgba(204, 255, 0, 0.6);
+}
+.app-shell.theme-acid .brand-mark {
+  background: #ccff00 !important;
+  color: #000 !important;
+  box-shadow: 0 0 15px rgba(204, 255, 0, 0.6);
+}
+.app-shell.theme-acid .search-wrap {
+  border-color: rgba(204, 255, 0, 0.5) !important;
+  background: rgba(18, 22, 10, 0.9) !important;
+  box-shadow: 0 0 15px rgba(204, 255, 0, 0.2);
+}
+.app-shell.theme-acid .search-wrap input {
+  color: #ccff00 !important;
+}
+.app-shell.theme-acid .tool-card {
+  border: 1px solid rgba(204, 255, 0, 0.4) !important;
+  background: rgba(18, 22, 10, 0.9) !important;
+  box-shadow: 0 0 20px rgba(204, 255, 0, 0.2);
+}
+.app-shell.theme-acid .start-button {
+  background: #ccff00 !important;
+  color: #000 !important;
+  box-shadow: 0 0 15px rgba(204, 255, 0, 0.4);
+}
+
+/* 6. MODO MINIMAL */
+.app-shell.theme-minimal {
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+/* 7. UPSIDE DOWN */
+.app-shell.theme-upside-down {
+  font-family: Georgia, "Times New Roman", serif;
+}
+.app-shell.theme-upside-down h1 {
+  color: #ff0033 !important;
+  text-shadow: 0 0 18px rgba(255, 0, 51, 0.65);
+}
+.app-shell.theme-upside-down .brand-mark {
+  background: #ff0033 !important;
+  color: #08080c !important;
+  box-shadow: 0 0 16px rgba(255, 0, 51, 0.65);
+}
+
+/* 8. ARCADE PIXEL */
+.app-shell.theme-arcade-pixel {
+  font-family: "Courier New", Courier, monospace;
+}
+.app-shell.theme-arcade-pixel h1 {
+  color: #ffd700 !important;
+  text-shadow: 0 0 16px rgba(255, 215, 0, 0.7);
+}
+.app-shell.theme-arcade-pixel .brand-mark {
+  background: #ffd700 !important;
+  color: #08080c !important;
+  box-shadow: 0 0 16px rgba(255, 215, 0, 0.6);
+}
+.app-shell.theme-arcade-pixel .focus-sidebar {
+  background: #09090e !important;
+  border-left: 1px solid rgba(255, 0, 255, 0.45) !important;
+}
+.app-shell.theme-arcade-pixel .tool-card {
+  background: #09090e !important;
+  border: 1px solid rgba(255, 0, 255, 0.65) !important;
+  box-shadow: 0 0 16px rgba(255, 0, 255, 0.12);
+}
+.app-shell.theme-arcade-pixel .pomodoro-widget,
+.app-shell.theme-arcade-pixel .quick-notes-widget {
+  background: #09090e !important;
+  box-shadow: inset 0 0 18px rgba(255, 0, 255, 0.04);
+}
+.app-shell.theme-arcade-pixel .tool-card,
+.app-shell.theme-arcade-pixel button,
+.app-shell.theme-arcade-pixel input,
+.app-shell.theme-arcade-pixel textarea,
+.app-shell.theme-arcade-pixel select,
+.app-shell.theme-arcade-pixel .modal-content {
+  border-radius: 0 !important;
+}
+
+/* 9. SOLAR ECLIPSE */
+.app-shell.theme-solar-eclipse {
+  font-family: system-ui, -apple-system, sans-serif;
+}
+.app-shell.theme-solar-eclipse h1 {
+  color: #ff6600 !important;
+  text-shadow: 0 0 18px rgba(255, 102, 0, 0.65);
+}
+.app-shell.theme-solar-eclipse .brand-mark {
+  background: #ff6600 !important;
+  color: #050508 !important;
+  box-shadow: 0 0 16px rgba(255, 102, 0, 0.6);
+}
+
+.app-shell.theme-upside-down .vecna-clock-widget {
+  position: relative;
+  overflow: hidden;
+  border-color: #7f1027 !important;
+  background:
+    radial-gradient(ellipse at 50% 30%, rgba(80, 5, 16, 0.38), transparent 68%),
+    linear-gradient(145deg, #16080c, #090709 75%) !important;
+  box-shadow:
+    inset 0 0 22px rgba(90, 0, 18, 0.25),
+    0 0 18px rgba(255, 0, 51, 0.1);
+}
+.vecna-clock-label {
+  margin: 3px 0 8px;
+  color: #a52235;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-align: center;
+  text-shadow: 0 0 8px rgba(255, 0, 51, 0.45);
+}
+.app-shell.theme-upside-down .pomodoro-clock {
+  width: 146px;
+  height: 146px;
+  margin: 8px auto 16px;
+  display: grid;
+  place-items: center;
+  border: 5px double #6f1024;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle, rgba(62, 8, 18, 0.44), rgba(8, 6, 8, 0.92) 68%);
+  color: #ff263f !important;
+  font-family: "Courier New", Courier, monospace !important;
+  text-shadow:
+    0 0 6px rgba(255, 0, 51, 0.85),
+    0 0 18px rgba(255, 0, 51, 0.45) !important;
+  box-shadow:
+    inset 0 0 18px rgba(255, 0, 51, 0.12),
+    0 0 16px rgba(255, 0, 51, 0.16);
+}
+.app-shell.theme-upside-down .pomodoro-clock.is-running {
+  animation: vecna-clock-pulse 1.15s ease-in-out infinite;
+}
+@keyframes vecna-clock-pulse {
+  0%, 100% {
+    opacity: 1;
+    box-shadow:
+      inset 0 0 18px rgba(255, 0, 51, 0.12),
+      0 0 15px rgba(255, 0, 51, 0.16);
+  }
+  50% {
+    opacity: 0.72;
+    box-shadow:
+      inset 0 0 24px rgba(255, 0, 51, 0.24),
+      0 0 26px rgba(255, 0, 51, 0.42);
+  }
+}
+.app-shell.theme-upside-down .quick-notes-widget {
+  border-color: rgba(255, 0, 51, 0.42) !important;
+  background:
+    repeating-linear-gradient(
+      0deg,
+      transparent 0 22px,
+      rgba(255, 0, 51, 0.08) 23px
+    ),
+    linear-gradient(rgba(18, 10, 13, 0.96), rgba(9, 8, 11, 0.98)) !important;
+  box-shadow: inset 0 0 22px rgba(255, 0, 51, 0.06);
+}
+.quick-notes-widget {
+  position: relative;
+  box-shadow: inset 0 0 22px rgba(255, 255, 255, 0.025);
+}
+.notes-save-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  text-transform: none;
+}
+.notes-status-dot {
+  width: 6px;
+  height: 6px;
+  flex: 0 0 6px;
+  border-radius: 50%;
+}
+.notes-save-status.is-live .notes-status-dot {
+  animation: notes-live-pulse 0.9s ease-in-out infinite;
+}
+@keyframes notes-live-pulse {
+  50% {
+    opacity: 0.45;
+  }
+}
+
+.app-shell span.theme-active-badge {
+  color: #000 !important;
+  background: var(--theme-accent) !important;
+  text-shadow: none !important;
+  letter-spacing: 0;
+  white-space: nowrap;
+}
+
+.app-shell.theme-minimal .pomodoro-widget {
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.025);
+}
+.app-shell.theme-minimal .pomodoro-clock {
+  text-shadow: 0 0 14px rgba(255, 255, 255, 0.12) !important;
+}
+.app-shell.theme-neon .pomodoro-widget {
+  box-shadow: inset 0 0 22px rgba(0, 240, 255, 0.035), 0 0 14px rgba(0, 240, 255, 0.08);
+}
+.app-shell.theme-neon .pomodoro-clock {
+  text-shadow: 0 0 12px rgba(0, 240, 255, 0.5), 0 0 24px rgba(0, 240, 255, 0.2) !important;
+}
+.app-shell.theme-matrix .pomodoro-widget {
+  box-shadow: inset 0 0 18px rgba(0, 255, 65, 0.08);
+}
+.app-shell.theme-matrix .pomodoro-clock {
+  color: #00ff41 !important;
+  font-family: "Courier New", Courier, monospace !important;
+  text-shadow: 0 0 8px rgba(0, 255, 65, 0.7) !important;
+}
+.app-shell.theme-synthwave .pomodoro-widget {
+  box-shadow: inset 0 -18px 26px rgba(255, 0, 127, 0.07), 0 0 14px rgba(255, 0, 127, 0.1);
+}
+.app-shell.theme-synthwave .pomodoro-clock {
+  color: #ff7b00 !important;
+  text-shadow: 0 0 10px rgba(255, 0, 127, 0.75), 0 0 24px rgba(255, 123, 0, 0.35) !important;
+}
+.app-shell.theme-amber .pomodoro-widget {
+  box-shadow: inset 0 0 18px rgba(255, 176, 0, 0.1);
+}
+.app-shell.theme-amber .pomodoro-clock {
+  color: #ffb000 !important;
+  font-family: "Courier New", Courier, monospace !important;
+  text-shadow: 0 0 8px rgba(255, 176, 0, 0.75) !important;
+}
+.app-shell.theme-acid .pomodoro-widget {
+  box-shadow: inset 0 0 20px rgba(204, 255, 0, 0.07);
+}
+.app-shell.theme-acid .pomodoro-clock {
+  color: #ccff00 !important;
+  text-shadow: 0 0 12px rgba(204, 255, 0, 0.55) !important;
+}
+.app-shell.theme-arcade-pixel .pomodoro-widget {
+  box-shadow: inset 0 0 0 2px rgba(255, 0, 255, 0.14), 0 0 12px rgba(255, 215, 0, 0.12);
+}
+.app-shell.theme-arcade-pixel .pomodoro-clock {
+  color: #ffd700 !important;
+  font-family: "Courier New", Courier, monospace !important;
+  text-shadow: 2px 2px 0 #ff00ff, 0 0 12px rgba(255, 215, 0, 0.4) !important;
+}
+.app-shell.theme-solar-eclipse .pomodoro-widget {
+  background:
+    radial-gradient(ellipse at 50% 100%, rgba(255, 102, 0, 0.16), transparent 58%),
+    #050508 !important;
+  box-shadow: inset 0 0 24px rgba(75, 0, 130, 0.18), 0 0 16px rgba(255, 102, 0, 0.1);
+}
+.app-shell.theme-solar-eclipse .pomodoro-clock {
+  color: #ff8a24 !important;
+  text-shadow: 0 0 10px rgba(255, 102, 0, 0.7), 0 0 26px rgba(255, 102, 0, 0.28) !important;
+}
+.app-shell.theme-synthwave .synthwave-clock-label {
+  margin: 2px 0 8px;
+  color: #00f0ff;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-align: center;
+  text-shadow: 0 0 8px rgba(0, 240, 255, 0.75);
+}
+.app-shell.theme-synthwave .pomodoro-clock {
+  position: relative;
+  width: 100%;
+  padding: 14px 8px;
+  border: 1px solid rgba(255, 0, 127, 0.82);
+  border-radius: 7px;
+  background:
+    linear-gradient(90deg, transparent 49.5%, rgba(0, 240, 255, 0.12) 50%, transparent 50.5%),
+    rgba(8, 5, 20, 0.86);
+  box-shadow:
+    inset 0 0 0 2px rgba(0, 240, 255, 0.12),
+    0 0 13px rgba(255, 0, 127, 0.3);
+  font-family: "Courier New", Courier, monospace !important;
+  letter-spacing: 4px;
+}
+.app-shell.theme-synthwave .pomodoro-clock.is-running {
+  animation: synthwave-clock-glow 1.8s ease-in-out infinite alternate;
+}
+@keyframes synthwave-clock-glow {
+  to {
+    box-shadow:
+      inset 0 0 0 2px rgba(0, 240, 255, 0.25),
+      0 0 22px rgba(255, 0, 127, 0.55);
+  }
+}
+.app-shell.theme-arcade-pixel .arcade-clock-label {
+  margin: 2px 0 8px;
+  color: #ff00ff;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-align: center;
+  text-shadow: 2px 2px 0 #4b0082;
+}
+.app-shell.theme-arcade-pixel .pomodoro-clock {
+  width: 100%;
+  padding: 14px 6px;
+  border: 3px solid #ff00ff;
+  border-radius: 0;
+  outline: 1px solid rgba(255, 215, 0, 0.82);
+  outline-offset: 3px;
+  background:
+    repeating-linear-gradient(0deg, rgba(255, 215, 0, 0.035) 0 2px, transparent 2px 5px),
+    #09090e;
+  box-shadow: 4px 4px 0 #4b0082, 0 0 14px rgba(255, 0, 255, 0.28);
+  font-family: "Courier New", Courier, monospace !important;
+  letter-spacing: 2px;
+}
+.app-shell.theme-arcade-pixel .pomodoro-clock.is-running {
+  animation: arcade-clock-pulse 0.8s steps(2, end) infinite;
+}
+@keyframes arcade-clock-pulse {
+  50% {
+    text-shadow: 2px 2px 0 #ff00ff, 0 0 16px rgba(255, 215, 0, 0.8) !important;
+  }
+}
+
+.profile-settings-eyebrow {
+  color: #00f0ff;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+}
+.profile-settings-modal input {
+  width: 100%;
+  min-height: 44px;
+  padding: 0 14px;
+  border: 1px solid rgba(0, 240, 255, 0.48);
+  border-radius: 8px;
+  outline: none;
+  color: #fff;
+  background: rgba(4, 7, 18, 0.86);
+  box-shadow: inset 0 0 14px rgba(0, 240, 255, 0.05);
+}
+.profile-settings-modal input:focus {
+  border-color: #00f0ff;
+  box-shadow: 0 0 0 3px rgba(0, 240, 255, 0.13), 0 0 18px rgba(0, 240, 255, 0.18);
+}
+.profile-settings-modal input::placeholder {
+  color: #777f9b;
+}
+.profile-settings-modal {
+  width: min(400px, 94vw);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.profile-settings-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.profile-settings-heading h2 {
+  margin-top: 6px;
+  color: #fff;
+  font-size: 19px;
+}
+.profile-settings-close {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border: 1px solid var(--border-color);
+  border-radius: 7px;
+  color: #fff;
+  background: transparent;
+  cursor: pointer;
+}
+.profile-settings-save {
+  justify-content: center;
+  min-height: 38px;
+  color: #030407;
+  background: var(--theme-accent);
+}
+
+.app-shell .quick-notes-widget {
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--theme-accent) 5%, transparent), transparent 55%),
+    var(--card-bg);
+}
+.app-shell .quick-notes-widget textarea {
+  padding-top: 8px;
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent 0,
+    transparent 23px,
+    color-mix(in srgb, var(--theme-accent) 10%, transparent) 24px
+  );
+}
+
+.app-shell,
+.app-shell * {
+  scrollbar-color: var(--theme-accent) transparent;
+  scrollbar-width: thin;
+}
+.app-shell *::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+.app-shell *::-webkit-scrollbar-track {
+  background: transparent;
+}
+.app-shell *::-webkit-scrollbar-thumb {
+  background: color-mix(in srgb, var(--theme-accent) 62%, transparent);
+  border: 2px solid transparent;
+  border-radius: 999px;
+  background-clip: padding-box;
+}
+.app-shell *::-webkit-scrollbar-thumb:hover {
+  background: var(--theme-accent);
+  background-clip: padding-box;
+}
+.app-shell .carousel-container::-webkit-scrollbar {
+  display: none;
+}
+
+/* ==========================================
+   ESTRUCTURA GENERAL Y COMPONENTES
+   ========================================== */
+.app-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: transparent !important;
+  position: relative;
+  isolation: isolate;
+  overflow-x: hidden;
+  transition: background 0.4s ease;
+}
+
+.topbar {
+  height: 60px;
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  background: rgba(18, 18, 21, 0.8);
+  backdrop-filter: blur(12px);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  font-size: 16px;
+}
+.topbar[data-tauri-drag-region] {
+  cursor: grab;
+}
+.topbar[data-tauri-drag-region] button,
+.topbar[data-tauri-drag-region] input,
+.topbar[data-tauri-drag-region] .search-wrap,
+.topbar[data-tauri-drag-region] .top-actions {
+  cursor: auto;
+}
+.topbar[data-tauri-drag-region] button,
+.topbar[data-tauri-drag-region] input {
+  -webkit-app-region: no-drag;
+}
+
+.window-controls {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-left: 4px;
+  padding-left: 10px;
+  border-left: 1px solid var(--border-color);
+}
+.window-controls-intro {
+  position: fixed;
+  top: 14px;
+  right: 16px;
+  z-index: 100001;
+  margin: 0;
+  padding: 6px;
+  border: 1px solid rgba(0, 240, 255, 0.24);
+  border-left: 1px solid rgba(0, 240, 255, 0.24);
+  border-radius: 8px;
+  background: rgba(3, 4, 7, 0.72);
+  backdrop-filter: blur(10px);
+}
+.window-control-button {
+  width: 30px;
+  height: 30px;
+  display: grid;
+  place-items: center;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  color: var(--text-muted);
+  background: transparent;
+  cursor: pointer;
+  transition: color 0.15s ease, background 0.15s ease, border-color 0.15s ease;
+}
+.window-control-button:hover {
+  color: var(--theme-accent);
+  background: color-mix(in srgb, var(--theme-accent) 12%, transparent);
+  border-color: color-mix(in srgb, var(--theme-accent) 35%, transparent);
+}
+.window-control-button.close:hover {
+  color: #fff;
+  background: #e5484d;
+  border-color: #e5484d;
+}
+
+.brand-mark {
+  background: var(--accent-purple);
+  color: #000;
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  display: grid;
+  place-items: center;
+  transition: all 0.3s ease;
+}
+
+/* Forzar que el icono SVG interno herede el color y contraste correcto */
+.brand-mark svg,
+.brand-mark svg path,
+.brand-mark svg polygon,
+.brand-mark svg circle {
+  fill: currentColor !important;
+  stroke: currentColor !important;
+}
+
+.search-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(21, 21, 25, 0.8);
+  border: 1px solid var(--border-color);
+  padding: 6px 14px;
+  border-radius: 20px;
+  width: 320px;
+  transition: all 0.3s ease;
+}
+
+.search-wrap input {
+  background: transparent;
+  border: 0;
+  outline: 0;
+  color: #fff;
+  font-size: 12px;
+  width: 100%;
+}
+
+.search-wrap kbd {
+  background: #22222a;
+  color: var(--text-muted);
+  font-size: 9px;
+  padding: 2px 6px;
+  border-radius: 4px;
+  border: 1px solid #333;
+}
+
+.top-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.icon-button {
+  background: rgba(24, 24, 29, 0.8);
+  border: 1px solid var(--border-color);
+  color: #fff;
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  transition: all 0.2s ease;
+}
+
+.avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #a99af5, #6366f1);
+  color: #000;
+  font-weight: 700;
+  font-size: 11px;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+
+.workspace {
+  display: flex;
+  flex: 1;
+}
+
+.rail {
+  width: 64px;
+  border-right: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 0;
+  gap: 16px;
+  background: rgba(12, 12, 16, 0.6);
+  backdrop-filter: blur(8px);
+}
+
+.rail-button {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--text-muted);
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  transition: all 0.25s ease;
+}
+
+.rail-button:hover {
+  background: #1a1a22;
+  color: #fff;
+}
+
+.rail-button.active {
+  background: #22222d;
+  color: var(--accent-purple);
+  border-color: #3b3b4a;
+}
+
+.rail-spacer {
+  flex: 1;
+}
+
+.content {
+  flex: 1;
+  padding: 32px 40px;
+  max-width: 1100px;
+}
+
+.welcome-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 32px;
+}
+
+.eyebrow {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--accent-purple);
+  margin-bottom: 6px;
+}
+
+.welcome-row h1 {
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  margin-bottom: 4px;
+}
+
+.subtitle {
+  color: var(--text-muted);
+  font-size: 13px;
+}
+
+.focus-pill {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(22, 22, 27, 0.85);
+  border: 1px solid var(--border-color);
+  padding: 6px 14px;
+  border-radius: 20px;
+  color: #ccc;
+  font-size: 11px;
+  cursor: pointer;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #22c55e;
+}
+
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 20px;
+}
+
+.section-heading h2 {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.section-heading p {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+.tool-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.tool-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 14px;
+  padding: 18px;
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: all 0.25s ease;
+  backdrop-filter: blur(10px);
+}
+
+.tool-card:hover {
+  border-color: #3f3f4e;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+.tool-tag {
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+}
+
+.tool-card h3 {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.tool-card p {
+  font-size: 11px;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+.empty-state {
+  border: 1px dashed var(--border-color);
+  border-radius: 14px;
+  padding: 24px;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 11px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(18, 18, 21, 0.4);
+}
+
+.start-button {
+  border: 0;
+  border-radius: 9px;
+  background: var(--accent-purple);
+  color: #111;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 8px 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: all 0.2s ease;
+}
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(3, 4, 7, 0.85);
+  backdrop-filter: blur(5px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(12px);
+}
+
+.app-shell.theme-synthwave .topbar {
+  background: rgba(15, 7, 27, 0.68);
+  backdrop-filter: blur(10px);
+}
+.app-shell.theme-synthwave .rail {
+  background: rgba(11, 6, 22, 0.58);
+  backdrop-filter: blur(10px);
+}
+.app-shell.theme-synthwave .tool-card {
+  background: rgba(22, 8, 36, 0.68) !important;
+  backdrop-filter: blur(10px);
+}
+.app-shell.theme-synthwave .focus-sidebar {
+  background: rgba(12, 6, 24, 0.7) !important;
+  backdrop-filter: blur(10px);
+}
+.app-shell.theme-synthwave .pomodoro-widget,
+.app-shell.theme-synthwave .quick-notes-widget,
+.app-shell.theme-synthwave .synthwave-panel,
+.app-shell.theme-synthwave .synthwave-stat-panel {
+  background: rgba(20, 8, 33, 0.72) !important;
+  backdrop-filter: blur(10px);
+}
+.app-shell.theme-synthwave .synthwave-stat-panel {
+  background: rgba(20, 8, 33, 0.54) !important;
+}
+.app-shell.theme-synthwave .focus-pill,
+.app-shell.theme-synthwave .search-wrap {
+  background-color: rgba(18, 8, 32, 0.68);
+  backdrop-filter: blur(10px);
+}
+
+/* Carrusel y vistas */
+.steam-carousel-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-top: 12px;
+}
+
+.carousel-arrow-btn {
+  position: absolute;
+  top: 45%;
+  transform: translateY(-50%);
+  z-index: 20;
+  background: rgba(14, 16, 23, 0.9);
+  border: 1px solid rgba(0, 240, 255, 0.4);
+  color: #00f0ff;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+
+.carousel-arrow-left { left: -18px; }
+.carousel-arrow-right { right: -18px; }
+
+.carousel-container {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 16px calc(50% - 130px) 24px calc(50% - 130px);
+  scroll-snap-type: x mandatory;
+  width: 100%;
+  align-items: center;
+}
+.carousel-container::-webkit-scrollbar { display: none; }
+
+.carousel-card {
+  scroll-snap-align: center;
+  flex: 0 0 260px;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 220px;
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  opacity: 0.45;
+  transform: scale(0.88);
+  filter: blur(1.5px);
+  backdrop-filter: blur(10px);
+}
+
+.carousel-card.active-card {
+  opacity: 1;
+  transform: scale(1.06) translateY(-4px);
+  border-color: var(--accent-color, var(--neon-cyan));
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.4);
+  filter: blur(0px);
+  z-index: 10;
+}
+
+/* Animated Pomodoro faces: each theme gets its own visual language. */
+.app-shell .pomodoro-clock {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.app-shell .pomodoro-clock::before,
+.app-shell .pomodoro-clock::after {
+  position: absolute;
+  content: "";
+  pointer-events: none;
+}
+
+.app-shell.theme-minimal .pomodoro-clock {
+  border-bottom: 2px solid rgba(255, 255, 255, 0.24);
+  background: radial-gradient(ellipse at 50% 100%, rgba(255, 255, 255, 0.08), transparent 68%);
+}
+.app-shell.theme-minimal .pomodoro-clock::after {
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #fff var(--timer-progress), transparent var(--timer-progress));
+}
+
+.app-shell.theme-neon .pomodoro-clock {
+  border: 1px solid rgba(0, 240, 255, 0.45);
+  border-radius: 12px;
+  background: linear-gradient(115deg, rgba(0, 240, 255, 0.07), transparent 50%, rgba(176, 38, 255, 0.09));
+}
+.app-shell.theme-neon .pomodoro-clock::before {
+  inset: -35%;
+  background: linear-gradient(115deg, transparent 38%, rgba(0, 240, 255, 0.15) 50%, transparent 62%);
+  transform: translateX(-80%);
+}
+.app-shell.theme-neon .pomodoro-clock.is-running::before {
+  animation: neon-clock-sweep 2.4s ease-in-out infinite;
+}
+
+.app-shell.theme-matrix .pomodoro-clock {
+  border: 1px solid rgba(0, 255, 65, 0.34);
+  background: linear-gradient(180deg, rgba(0, 20, 7, 0.85), rgba(0, 0, 0, 0.95));
+}
+.app-shell.theme-matrix .pomodoro-clock::before {
+  inset: 0 0 auto;
+  height: 18px;
+  content: "01  10  0110  01  101";
+  overflow: hidden;
+  color: rgba(0, 255, 65, 0.38);
+  font: 9px/18px "Courier New", monospace;
+  letter-spacing: 3px;
+  text-align: left;
+  white-space: nowrap;
+}
+.app-shell.theme-matrix .pomodoro-clock.is-running::before {
+  animation: matrix-clock-code 1.8s linear infinite;
+}
+
+.app-shell.theme-amber .pomodoro-clock {
+  border: 1px solid rgba(255, 176, 0, 0.48);
+  border-radius: 4px;
+  background: repeating-linear-gradient(0deg, rgba(255, 176, 0, 0.035) 0 1px, transparent 1px 5px), #100b02;
+}
+.app-shell.theme-amber .pomodoro-clock::after {
+  inset: 0;
+  background: linear-gradient(transparent 35%, rgba(255, 176, 0, 0.1) 50%, transparent 65%);
+  transform: translateY(-100%);
+}
+.app-shell.theme-amber .pomodoro-clock.is-running::after {
+  animation: amber-clock-scan 2.6s linear infinite;
+}
+
+.app-shell.theme-acid .pomodoro-clock {
+  border: 1px dashed rgba(204, 255, 0, 0.55);
+  border-radius: 18px 5px 18px 5px;
+  background: radial-gradient(ellipse at 50% 50%, rgba(204, 255, 0, 0.1), transparent 70%);
+}
+.app-shell.theme-acid .pomodoro-clock.is-running {
+  animation: acid-clock-wobble 1.6s ease-in-out infinite;
+}
+
+.app-shell.theme-upside-down .pomodoro-clock::before {
+  inset: 8px;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 22% 30%, #ff334b 0 1px, transparent 2px),
+    radial-gradient(circle at 76% 21%, #ff263f 0 1px, transparent 2px),
+    radial-gradient(circle at 84% 67%, #c81d36 0 1px, transparent 2px),
+    radial-gradient(circle at 35% 83%, #ff334b 0 1px, transparent 2px),
+    radial-gradient(circle at 15% 65%, #c81d36 0 1px, transparent 2px);
+  opacity: 0.6;
+}
+.app-shell.theme-upside-down .pomodoro-clock.is-running::before {
+  animation: vecna-spores 3.2s ease-in-out infinite;
+}
+
+.app-shell.theme-synthwave .pomodoro-clock::before {
+  left: 30%;
+  bottom: 3px;
+  width: 40%;
+  height: 12px;
+  background: repeating-linear-gradient(90deg, #00f0ff 0 3px, transparent 3px 7px);
+  filter: drop-shadow(0 0 5px rgba(0, 240, 255, 0.8));
+  transform: scaleY(0.55);
+  transform-origin: bottom;
+}
+.app-shell.theme-synthwave .pomodoro-clock.is-running::before {
+  animation: synthwave-equalizer 0.9s ease-in-out infinite alternate;
+}
+.app-shell.theme-synthwave .pomodoro-clock::after {
+  inset: 0;
+  background: repeating-linear-gradient(0deg, transparent 0 3px, rgba(255, 255, 255, 0.055) 4px);
+}
+
+.app-shell.theme-arcade-pixel .pomodoro-clock::before {
+  inset: 0;
+  z-index: 1;
+  background: repeating-linear-gradient(0deg, transparent 0 3px, rgba(255, 255, 255, 0.07) 4px);
+}
+.app-shell.theme-arcade-pixel .pomodoro-clock::after {
+  inset: 0;
+  z-index: 1;
+  border: 2px solid rgba(255, 215, 0, 0.12);
+  box-shadow: inset 0 0 12px rgba(255, 0, 255, 0.12);
+}
+.app-shell.theme-arcade-pixel .arcade-clock-separator {
+  position: relative;
+  z-index: 2;
+  color: #fff !important;
+  animation: arcade-colon-blink 1s steps(2, end) infinite;
+}
+
+.app-shell.theme-solar-eclipse .pomodoro-clock {
+  width: 148px;
+  height: 148px;
+  margin: 6px auto 16px;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  border: 1px solid rgba(255, 138, 36, 0.4);
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 50% 50%, #050508 0 35%, transparent 37%),
+    conic-gradient(from 0deg, rgba(255, 102, 0, 0.1), rgba(255, 102, 0, 0.65), rgba(75, 0, 130, 0.35), rgba(255, 102, 0, 0.1));
+  box-shadow: inset 0 0 24px rgba(0, 0, 0, 0.8), 0 0 16px rgba(255, 102, 0, 0.2);
+}
+.app-shell.theme-solar-eclipse .pomodoro-clock::before {
+  inset: 5px 18%;
+  border: 1px solid rgba(255, 192, 106, 0.55);
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(255, 102, 0, 0.45);
+}
+.app-shell.theme-solar-eclipse .pomodoro-clock.is-running::before {
+  animation: eclipse-clock-orbit 4s linear infinite;
+}
+
+@keyframes neon-clock-sweep {
+  50%, 100% { transform: translateX(100%); }
+}
+@keyframes matrix-clock-code {
+  to { letter-spacing: 8px; opacity: 0.65; }
+}
+@keyframes amber-clock-scan {
+  to { transform: translateY(100%); }
+}
+@keyframes acid-clock-wobble {
+  50% { transform: skewX(-1deg) scale(1.015); }
+}
+@keyframes vecna-spores {
+  50% { opacity: 0.95; transform: rotate(14deg) scale(0.94); }
+}
+@keyframes synthwave-equalizer {
+  to { transform: scaleY(1); filter: drop-shadow(0 0 8px rgba(0, 240, 255, 0.95)); }
+}
+@keyframes arcade-colon-blink {
+  50% { opacity: 0.2; }
+}
+@keyframes eclipse-clock-orbit {
+  to { transform: rotate(360deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .app-shell .pomodoro-clock,
+  .app-shell .pomodoro-clock::before,
+  .app-shell .pomodoro-clock::after,
+  .app-shell .arcade-clock-separator {
+    animation-duration: 6s !important;
+    animation-iteration-count: 1 !important;
+  }
+}
